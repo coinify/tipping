@@ -2,8 +2,20 @@ angular.module('tipping', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
 
 angular.module('tipping').config(function($stateProvider, $urlRouterProvider) {
 
+    $stateProvider.state('index', {
+        templateUrl: 'partial/index/index.html'
+    });
+    $stateProvider.state('index.list', {
+        url: '/list',
+        views: {
+            content: {
+                templateUrl: 'partial/list/list.html'
+            }
+        }
+
+    });
     /* Add New States Above */
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/list');
 
 });
 
