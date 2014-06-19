@@ -60,8 +60,10 @@ var getRandomQuotes = function() {
 angular.module('tipping').factory('Blockchain',function() {
 
 	var Blockchain = {};
-        Blockchain.account = "1CyfVomSMG4FiFW3JvD9Vr67tx8em5vrR8";
-        Blockchain.balance = 10000;
+        Blockchain.account = {
+            address: "1CyfVomSMG4FiFW3JvD9Vr67tx8em5vrR8",
+            balance: 10000
+        };
 
         Blockchain.quotes = getRandomQuotes();
 
@@ -72,7 +74,7 @@ angular.module('tipping').factory('Blockchain',function() {
                 value: value
             } );    
             quote.value += value;
-            Blockchain.balance -= value;
+            Blockchain.account.balance -= value;
         };
 
         Blockchain.addQuote = function (title, text) {
@@ -81,7 +83,7 @@ angular.module('tipping').factory('Blockchain',function() {
                 text: text,
                 author: 'me',
                 value: 0,
-                address: "1CyfVomSMG4FiFW3JvD9Vr67tx8em5vrR8"
+                address: "1CyfVomSMG4FiFW3JvD9Vr67tx8em5vrR8" + Math.floor((Math.random() * 10000))
             });
         };
 

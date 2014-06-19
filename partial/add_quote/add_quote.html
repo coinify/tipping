@@ -1,4 +1,21 @@
 <div class="col-md-12" ng-controller="AddQuoteCtrl">
-
-
+    <legend><h1>Add article</h1></legend>
+    <form class="form-horizontal" ng-submit="addQuote()">
+        <fieldset>
+            <div class="form-group">
+                <label for="inputEmail" class="col-md-2 control-label">Title</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Title" ng-model="title">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="textArea" class="col-md-2 control-label">Text</label>
+                <div class="col-md-9">
+                    <textarea class="form-control" rows="5" ng-model="text"></textarea>
+                    <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+                    <button class="btn btn-success">Dodaj</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
 </div>

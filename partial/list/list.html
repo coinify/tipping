@@ -1,14 +1,15 @@
-<div class="col-md-9" ng-controller="ListCtrl">
-
-    <h1>News</h1>
-    <ul class="list-group">
-        <li class="list-group-item" ng-repeat="quote in quotes | filter: index.search" ui-sref='index.quote_details({address:quote.address})' style='cursor:pointer;'>
+<div class="col-md-12" ng-controller="ListCtrl">
+    
+    <legend><h1>News</h1></legend>
+    <ul class="list-group col-md-8">
+        <li class="list-group-item tipping-list-quote" ng-repeat="quote in quotes | filter: index.search">
+            <b><span class="glyphicon glyphicon-plus pull-right tipping-list-plus" style='font-size: 26px;' ng-click='increase(quote)'></span></b>
+            <h2 ui-sref='index.quote_details({address:quote.address})' style='cursor:pointer;'>{{quote.title}}</h2>
+            <p>{{quote.text}}</p>
+            <small>~ {{quote.author}}</small>
             <span class="badge">
                 {{quote.value}}
             </span>
-            <h2>{{quote.title}}</h2>
-            <p>{{quote.text}}</p>
-            <small>{{quote.author}}</p>
         </li>
     </ul>
 </div>

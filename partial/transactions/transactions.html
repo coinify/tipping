@@ -1,4 +1,22 @@
 <div class="col-md-12" ng-controller="TransactionsCtrl">
 
-    <h1> Hello Transactions </h1>
+    <legend><h1>Transactions</h1></legend>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Address</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat='transaction in transactions'>
+                <td>{{$index}}</td>
+                <td>{{transaction.address}}</td>
+                <td>{{transaction.value}}</td>
+            </tr>
+        </tbody>
+    </table>
+
 </div>

@@ -1,4 +1,4 @@
-angular.module('tipping').controller('TransactionsCtrl',function($scope){
-
+angular.module('tipping').controller('TransactionsCtrl',function($scope, Blockchain){
+    $scope.transactions = Blockchain.transactions;
 
 });
