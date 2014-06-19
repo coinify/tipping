@@ -1,4 +1,13 @@
 <div class="col-md-12" ng-controller="ListCtrl">
 
-    <h1>Hello</h1>
+    <h1>News</h1>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="quote in quotes | filter: {title: index.search}">
+            <span class="badge">
+                {{quote.value}}
+            </span>
+            <h2>{{quote.title}}</h2>
+            <p>{{quote.text}}</p>
+        </li>
+    </ul>
 </div>
