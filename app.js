@@ -14,6 +14,14 @@ angular.module('tipping').config(function($stateProvider, $urlRouterProvider) {
         }
 
     });
+    $stateProvider.state('index.quote_details', {
+        url: '/:address',
+        views: {
+            content: {
+                templateUrl: 'partial/quote_details/quote_details.html'
+            }
+        }
+    });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/list');
 

@@ -85,5 +85,9 @@ angular.module('tipping').factory('Blockchain',function() {
             });
         };
 
+        Blockchain.quoteFromAddress = function (address) {
+            return _.find(Blockchain.quotes, {address: address});
+        };
+
 	return Blockchain;
 });
