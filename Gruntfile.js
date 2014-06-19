@@ -44,6 +44,11 @@ module.exports = function (grunt) {
         }
       }
     },
+    open: {
+        dev: {
+            path: 'http://localhost:9001'
+        }
+    },
     watch: {
       main: {
         options: {
@@ -195,8 +200,9 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('build',['jshint','clean:before','less','dom_munger','ngtemplates','cssmin','concat','ngmin','uglify','copy','htmlmin','imagemin','clean:after']);
-  grunt.registerTask('serve', ['dom_munger:read','jshint','connect', 'watch']);
+  grunt.registerTask('serve', ['dom_munger:read','jshint','connect', 'open:dev', 'watch']);
   grunt.registerTask('test',['dom_munger:read','karma:all_tests']);
+  grunt.registerTask('default', ['serve']);
 
   grunt.event.on('watch', function(action, filepath) {
     //https://github.com/gruntjs/grunt-contrib-watch/issues/156
