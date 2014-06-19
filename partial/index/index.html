@@ -13,6 +13,25 @@
                 <input class="form-control col-md-8" type="text" placeholder="Search" ng-model="index.search">
                 </input>
             </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li ui-sref='index.notifications({p:0})'>
+                    <a>
+                        <span class="badge">12</span>
+                        Notifications
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref='index.account({address:0})'><a>Account</a></li>
+                        <li ui-sref='index.transactions({p:0})'><a>Transactions</a></li>
+                        <li ui-sref='index.add_quote({p:0})'><a>Add article</a></li>
+                        <li class="divider"></li>
+                        <li ui-sref='index.help({p:0})'><a>Help</a></li>
+                        <li ui-sref='index.about({p:0})'><a>About</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
     <div ui-view="content">

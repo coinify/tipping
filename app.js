@@ -22,6 +22,55 @@ angular.module('tipping').config(function($stateProvider, $urlRouterProvider) {
             }
         }
     });
+    $stateProvider.state('index.help', {
+        url: '/help/:p',
+        views: {
+            content: {
+                templateUrl: 'partial/help/help.html'
+            }
+        }
+
+    });
+    $stateProvider.state('index.transactions', {
+        url: '/transactions/:p',
+        views: {
+            content: {     
+                templateUrl: 'partial/transactions/transactions.html'
+            }
+        }
+    });
+    $stateProvider.state('index.notifications', {
+        url: '/notications/:p',
+        views: {
+            content: {
+                templateUrl: 'partial/notifications/notifications.html'
+            }
+        }
+    });
+    $stateProvider.state('index.account', {
+        url: '/account/:address',
+        views: {
+            content: {
+                templateUrl: 'partial/account/account.html'
+            }
+        }
+    });
+    $stateProvider.state('index.add_quote', {
+        url: '/add_quote/:p',
+        views: {
+            content: {
+                templateUrl: 'partial/add_quote/add_quote.html'
+            }
+        }
+    });
+    $stateProvider.state('index.about', {
+        url: '/about/:p',
+        views: {
+            content: {
+                templateUrl: 'partial/about/about.html'
+            }
+        }
+    });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/list');
 
