@@ -10,30 +10,16 @@
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <form class="navbar-form navbar-left">
-                <input class="form-control col-md-8 tipping-input" type="text" placeholder="Search" ng-model="index.search">
+                <input class="form-control tipping-input" type="text" placeholder="Search" ng-model="index.search">
                 </input>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li style='background-color: #333'>
-                    <a>
-                        {{account.balance}} ETH
-                    </a>
-                </li>
-                <li ui-sref='index.notifications({p:0})'>
-                    <a>
-                        <span class="badge">12</span>
-                        Notifications
-                    </a>
-                </li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">More&nbsp;<b class="caret"></b></a>
+                    <a class="dropdown-toggle tipping-navbar-balance" data-toggle="dropdown">
+                        5 340,00 eth&nbsp;<b class="caret"></b>
+                    </a>
                     <ul class="dropdown-menu">
-                        <li ui-sref='index.account({address:account.address})'><a>Account</a></li>
-                        <li ui-sref='index.transactions({p:0})'><a>Transactions</a></li>
-                        <li ui-sref='index.add_quote({p:0})'><a>Add article</a></li>
-                        <li class="divider"></li>
-                        <li ui-sref='index.help({p:0})'><a>Help</a></li>
-                        <li ui-sref='index.about({p:0})'><a>About</a></li>
+                        <li><a>Account</a></li>
                     </ul>
                 </li>
             </ul>
