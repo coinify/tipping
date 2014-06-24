@@ -31,9 +31,16 @@ angular.module('tipping').config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'partial/dashboard-tabs/dashboard-tabs.html'
     }]);
 
+    registerSubstateInView('leftbar.dashboard.tabs', [{
+        url: '/:channel',
+        state: 'channel',
+        view: 'tab',
+        templateUrl: 'partial/tab/tab.html'
+    }]);
+
     
     /* Add New States Above */
-    $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('/dashboard/global');
 
 });
 
