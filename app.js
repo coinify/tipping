@@ -19,10 +19,16 @@ angular.module('tipping').config(function($stateProvider, $urlRouterProvider) {
     });
 
     registerSubstateInView('leftbar', [{
-        url: '/dashboard',
         state: 'dashboard',
         view: 'main',
         templateUrl: 'partial/dashboard/dashboard.html'
+    }]);
+
+    registerSubstateInView('leftbar.dashboard', [{
+        url: '/dashboard',
+        state: 'tabs',
+        view: 'tabs',
+        templateUrl: 'partial/dashboard-tabs/dashboard-tabs.html'
     }]);
 
     
