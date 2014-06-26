@@ -22,6 +22,21 @@ angular.module('tipping').config(function($stateProvider, $urlRouterProvider) {
         state: 'dashboard',
         view: 'main',
         templateUrl: 'partial/dashboard/dashboard.html'
+    },{
+        url: '/wallet',
+        state: 'wallet',
+        view: 'main',
+        templateUrl: 'partial/wallet/wallet.html'
+    },{
+        url: '/reputation',
+        state: 'reputation',
+        view: 'main',
+        templateUrl: 'partial/reputation/reputation.html'
+    },{
+        url:'/settings',
+        state: 'settings',
+        view: 'main',
+        templateUrl: 'partial/settings/settings.html'
     }]);
 
     registerSubstateInView('leftbar.dashboard', [{

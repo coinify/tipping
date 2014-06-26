@@ -1,21 +1,29 @@
-angular.module('tipping').controller('LeftbarCtrl',function($scope){
+angular.module('tipping').controller('LeftbarCtrl',function($scope, $location){
 
     $scope.sections = [{
         title: 'Dashboard',
         image: '',
-        link: ''
+        link: 'leftbar.dashboard.tabs.channel({channel:"global"})',
+        key: 'dashboard'
     },{
         title: 'Wallet',
         image: '',
-        link: ''
+        link: 'leftbar.wallet',
+        key: 'wallet'
     },{
         title: 'Reputation',
         image: '',
-        link: ''
+        link: 'leftbar.reputation',
+        key: 'reputation'
     },{
         title: 'Settings',
         image: '',
-        link: ''
+        link: 'leftbar.settings',
+        key: 'settings'
     }];
+
+    $scope.isActiveButton = function (link) {
+        return _.contains($location.path(), link);
+    };
 });
 
