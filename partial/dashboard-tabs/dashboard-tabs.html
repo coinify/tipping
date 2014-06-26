@@ -2,7 +2,7 @@
     <div class="navbar navbar-inverse tipping-navbar-tabs">
         <div class="navbar-collapse collapse tipping-navbar-tabs-collapse">
             <ul class="nav navbar-nav">
-                <li ng-repeat="link in links" ng-class="{'tipping-navbar-tab-selected': isActivePath(link)}">
+                <li ng-repeat="link in links" ng-class="{'tipping-navbar-tab-selected': isActivePath(link)}" class="tipping-navbar-tab">
                 <a ui-sref="leftbar.dashboard.tabs.channel({channel:link})">#{{link}}</a>
                 </li>
             </ul>
