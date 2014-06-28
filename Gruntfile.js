@@ -46,9 +46,14 @@ module.exports = function (grunt) {
         }
       }
     },
+    develop: {
+        server: {
+            file: 'app.js'
+        }
+    },
     open: {
         dev: {
-            path: 'http://localhost:9001'
+            path: 'http://localhost:3000'
         }
     },
     watch: {
@@ -63,12 +68,13 @@ module.exports = function (grunt) {
       }
     },
     jshint: {
-      main: {
+      public: {
         options: {
             jshintrc: '.jshintrc'
         },
-        src: createFolderGlobs('*.js')
-      }
+        src: ['public/**/*.js', '!public/bower_components/**']//createFolderGlobs('*.js')
+      },
+      server: ['app/**/*.js', 'app.js']
     },
     clean: {
       before:{
@@ -202,7 +208,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('build',['jshint','clean:before','less','dom_munger','ngtemplates','cssmin','concat','ngmin','uglify','copy','htmlmin','imagemin','clean:after']);
-  grunt.registerTask('serve', ['dom_munger:read', 'jshint', 'connect', 'open:dev', 'watch']);
+  grunt.registerTask('serve', ['dom_munger:read', 'jshint',/* 'connect',*/'develop', 'open:dev', 'watch']);
   grunt.registerTask('test',['dom_munger:read','karma:all_tests']);
   grunt.registerTask('default', ['serve']);
 

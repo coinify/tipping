@@ -1,6 +1,9 @@
 {
   "name": "tipping",
   "version": "0.0.0",
+  "scripts": {
+    "start": "node app"
+  },
   "devDependencies": {
     "grunt": "~0.4",
     "grunt-dom-munger": "~3.4",
@@ -28,6 +31,10 @@
     "karma-firefox-launcher": "~0.1.3"
   },
   "dependencies": {
-    "grunt-open": "~0.2.3"
+    "grunt-open": "~0.2.3",
+    "grunt-develop": "~0.4.0",
+    "request": "~2.36.0",
+    "express": "~4.4.5",
+    "jade": "~1.3.1"
   }
 }
