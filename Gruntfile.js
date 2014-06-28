@@ -25,6 +25,7 @@ var createFolderGlobs = function(fileTypePatterns) {
             }
           })
           .filter(function(patterns){
+            console.log('pattern: ', patterns);
             return patterns;
           })
           .concat(fileTypePatterns);
@@ -91,7 +92,7 @@ module.exports = function (grunt) {
             module: pkg.name,
             htmlmin:'<%= htmlmin.main.options %>'
         },
-        src: [createFolderGlobs('*.html'),'!index.html','!_SpecRunner.html'],
+        src: [createFolderGlobs('*.html'),'!public/index.html','!_SpecRunner.html'],
         dest: 'temp/templates.js'
       }
     },
@@ -99,7 +100,7 @@ module.exports = function (grunt) {
       main: {
         files: [
           {src: ['img/**'], dest: 'dist/'},
-          {src: ['bower_components/font-awesome/fonts/**'], dest: 'dist/',filter:'isFile',expand:true}
+          {src: ['public/bower_components/font-awesome/fonts/**'], dest: 'dist/',filter:'isFile',expand:true}
           //{src: ['bower_components/angular-ui-utils/ui-utils-ieshiv.min.js'], dest: 'dist/'},
           //{src: ['bower_components/select2/*.png','bower_components/select2/*.gif'], dest:'dist/css/',flatten:true,expand:true},
           //{src: ['bower_components/angular-mocks/angular-mocks.js'], dest: 'dist/'}
@@ -114,7 +115,7 @@ module.exports = function (grunt) {
             {selector:'link[rel="stylesheet"][data-concat!="false"]',attribute:'href',writeto:'appcss'}
           ]
         },
-        src: 'index.html'
+        src: 'public/index.html'
       },
       update: {
         options: {
@@ -124,7 +125,7 @@ module.exports = function (grunt) {
             {selector:'head',html:'<link rel="stylesheet" href="app.full.min.css">'}
           ]
         },
-        src:'index.html',
+        src:'public/index.html',
         dest: 'dist/index.html'
       }
     },
@@ -182,7 +183,7 @@ module.exports = function (grunt) {
         frameworks: ['jasmine'],
         files: [  //this files data is also updated in the watch handler, if updated change there too
           '<%= dom_munger.data.appjs %>',
-          'bower_components/angular-mocks/angular-mocks.js',
+          'public/bower_components/angular-mocks/angular-mocks.js',
           createFolderGlobs('*-spec.js')
         ],
         logLevel:'ERROR',
@@ -200,7 +201,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('build',['jshint','clean:before','less','dom_munger','ngtemplates','cssmin','concat','ngmin','uglify','copy','htmlmin','imagemin','clean:after']);
-  grunt.registerTask('serve', ['dom_munger:read','jshint','connect', 'open:dev', 'watch']);
+  grunt.registerTask('serve', ['dom_munger:read', 'jshint', 'connect', /*'open:dev',*/ 'watch']);
   grunt.registerTask('test',['dom_munger:read','karma:all_tests']);
   grunt.registerTask('default', ['serve']);
 
@@ -224,7 +225,7 @@ module.exports = function (grunt) {
       //if the spec exists then lets run it
       if (grunt.file.exists(spec)) {
         var files = [].concat(grunt.config('dom_munger.data.appjs'));
-        files.push('bower_components/angular-mocks/angular-mocks.js');
+        files.push('public/bower_components/angular-mocks/angular-mocks.js');
         files.push(spec);
         grunt.config('karma.options.files', files);
         tasksToRun.push('karma:during_watch');
@@ -233,7 +234,7 @@ module.exports = function (grunt) {
 
     //if index.html changed, we need to reread the <script> tags so our next run of karma
     //will have the correct environment
-    if (filepath === 'index.html') {
+    if (filepath === 'public/index.html') {
       tasksToRun.push('dom_munger:read');
     }
 
