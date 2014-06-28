@@ -38,14 +38,6 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    connect: {
-      main: {
-        options: {
-          port: 9001,
-          base: 'public'
-        }
-      }
-    },
     develop: {
         server: {
             file: 'app.js'
@@ -72,7 +64,7 @@ module.exports = function (grunt) {
         options: {
             jshintrc: '.jshintrc'
         },
-        src: ['public/**/*.js', '!public/bower_components/**']//createFolderGlobs('*.js')
+        src: ['public/**/*.js', '!public/bower_components/**']
       },
       server: ['app/**/*.js', 'app.js']
     },
@@ -208,7 +200,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('build',['jshint','clean:before','less','dom_munger','ngtemplates','cssmin','concat','ngmin','uglify','copy','htmlmin','imagemin','clean:after']);
-  grunt.registerTask('serve', ['dom_munger:read', 'jshint',/* 'connect',*/'develop', 'open:dev', 'watch']);
+  grunt.registerTask('serve', ['dom_munger:read', 'jshint', 'develop', 'open:dev', 'watch']);
   grunt.registerTask('test',['dom_munger:read','karma:all_tests']);
   grunt.registerTask('default', ['serve']);
 
