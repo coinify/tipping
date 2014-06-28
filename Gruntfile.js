@@ -25,10 +25,10 @@ var createFolderGlobs = function(fileTypePatterns) {
             }
           })
           .filter(function(patterns){
-            console.log('pattern: ', patterns);
             return patterns;
           })
-          .concat(fileTypePatterns);
+          .concat(fileTypePatterns)
+          .concat('!public/bower_components/**');
 };
 
 module.exports = function (grunt) {
@@ -41,7 +41,8 @@ module.exports = function (grunt) {
     connect: {
       main: {
         options: {
-          port: 9001
+          port: 9001,
+          base: 'public'
         }
       }
     },
@@ -201,7 +202,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('build',['jshint','clean:before','less','dom_munger','ngtemplates','cssmin','concat','ngmin','uglify','copy','htmlmin','imagemin','clean:after']);
-  grunt.registerTask('serve', ['dom_munger:read', 'jshint', 'connect', /*'open:dev',*/ 'watch']);
+  grunt.registerTask('serve', ['dom_munger:read', 'jshint', 'connect', 'open:dev', 'watch']);
   grunt.registerTask('test',['dom_munger:read','karma:all_tests']);
   grunt.registerTask('default', ['serve']);
 
