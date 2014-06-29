@@ -4,5 +4,17 @@
     <div class="col-md-8">
     </div>
     <div class="col-md-4">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="message in messages">
+            {{message}}
+            </li>
+        </ul>
+        <form class="input-group" ng-submit="sendMessage()">
+            <input class="form-control" type="text" placeholder="enter message here..." ng-model="inputMessage">
+            </input>
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Send</button>
+            </span>
+        </form>
     </div>
 </div>
