@@ -9,12 +9,15 @@ var express = require('express'),
     path = require('path'),
     cons = require('consolidate');
 
-var routes = require('./app/config/routes');
-
 var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+var routes = require('./app/config/routes'),
+    sockets = require('./app/config/sockets');
+
 
 app.engine('html', cons.swig);  
-
 app.set('views', __dirname + '/public');
 app.set('view engine', 'jade');
 app.use(morgan('dev'));
@@ -22,6 +25,7 @@ app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
 routes.configRoutes(app);
+sockets.configSockets(io);
 
-app.listen(process.env.PORT || 9001);
+http.listen(process.env.PORT || 9001);
 
