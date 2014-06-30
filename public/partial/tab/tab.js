@@ -7,7 +7,10 @@ angular.module('tipping').controller('TabCtrl',function($scope, $stateParams, Ch
     });
 
     $scope.sendMessage = function () {
-        Chat.sendMessage( $scope.inputMessage);
+        Chat.sendMessage({
+            text: $scope.inputMessage,
+            time: new Date()
+        });
         $scope.inputMessage = '';
     };
 });

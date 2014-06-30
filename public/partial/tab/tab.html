@@ -4,17 +4,30 @@
     <div class="col-md-8">
     </div>
     <div class="col-md-4">
-        <ul class="list-group">
-            <li class="list-group-item" ng-repeat="message in messages">
-            {{message}}
-            </li>
-        </ul>
-        <form class="input-group" ng-submit="sendMessage()">
-            <input class="form-control" type="text" placeholder="enter message here..." ng-model="inputMessage">
-            </input>
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Send</button>
-            </span>
-        </form>
+        <div class="panel panel-primary tipping-chat-panel">
+            <div class="panel-heading tipping-chat-panel-heading">
+                <h5 class="tipping-chat-panel-heading-title">WHISPER STREAM</h5>
+            </div>
+            <div class="panel-body tipping-chat-panel-body">
+                <div class="list-group">
+                    <a class="list-group-item tipping-chat-li" ng-repeat="message in messages">
+                        <b><span am-time-ago="message.time" class="pull-right"></span></b> 
+                        <h4 class="list-group-item-heading tipping-chat-li-heading"><b>Autor</b></h4>
+                        <p class="list-group-item-text tipping-chat-li-message">{{message.text}}</p>
+                    </a>
+                </div>
+            </div>
+            <div class="panel-footer tipping-chat-panel-footer">
+                <form class="input-group" ng-submit="sendMessage()">
+                    <input class="form-control tipping-chat-input" type="text" placeholder="enter message here..." ng-model="inputMessage">
+                    </input>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default tipping-chat-input-button" type="button">
+                            <i class="fa fa-send-o fa-lg tipping-chat-input-icon"></i> 
+                        </button>
+                    </span>
+                </form>
+            </div>
+        </div>
     </div>
 </div>

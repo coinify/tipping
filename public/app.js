@@ -1,4 +1,4 @@
-angular.module('tipping', ['ui.bootstrap','ui.utils','ui.router','ngAnimate', 'btford.socket-io']);
+angular.module('tipping', ['ui.bootstrap','ui.utils','ui.router','ngAnimate', 'btford.socket-io', 'angularMoment']);
 
 angular.module('tipping').config(function($stateProvider, $urlRouterProvider) {
 
@@ -59,7 +59,8 @@ angular.module('tipping').config(function($stateProvider, $urlRouterProvider) {
 
 });
 
-angular.module('tipping').run(function($rootScope) {
+angular.module('tipping').run(function($rootScope, amMoment) {
+    amMoment.changeLanguage('pl');
 
     $rootScope.safeApply = function(fn) {
         var phase = $rootScope.$$phase;
