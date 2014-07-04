@@ -1,13 +1,19 @@
 <div class="panel co-transactions-panel">
-    <div class="panel-heading">
-        <h5>
+    <div class="panel-heading co-transactions-panel-header">
+        <p class="co-transactions-panel-header-text">
             LATEST TRANSACTIONS
-        </h5>
+        </p>
     </div>
     <div class="panel-body co-transactions-panel-body">
         <div class="list-group">
             <a class="list-group-item co-transactions-item" ng-repeat="item in items">
-                <p class="co-transactions-item-title">{{item.title}}</p>
+                <p class="co-transactions-item-title">
+                    {{item.title}}
+                </p>
+                <p class="co-transactions-item-address">
+                    {{item.address}}
+                </p>
+                
             </a>
         </div>
     </div>
