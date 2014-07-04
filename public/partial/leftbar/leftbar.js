@@ -21,9 +21,5 @@ angular.module('tipping').controller('LeftbarCtrl',function($scope, $location){
         link: 'leftbar.settings',
         key: 'settings'
     }];
-
-    $scope.isActiveButton = function (link) {
-        return _.contains($location.path(), link);
-    };
 });
 

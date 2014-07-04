@@ -4,9 +4,4 @@ angular.module('tipping').controller('DashboardTabsCtrl',function($scope, $locat
         'global',
         'friends'
     ];
-
-    $scope.isActivePath = function (link) {
-        return _.contains($location.path(), link);
-    };
-
 });
