@@ -1,26 +1,28 @@
 <div>
-    <div class="panel panel-primary tipping-chat-panel">
-        <div class="panel-heading tipping-chat-panel-heading">
-            <h5 class="tipping-chat-panel-heading-title">WHISPER STREAM</h5>
+    <div class="panel co-chat-panel">
+        <div class="panel-heading co-chat-panel-header">
+            <p class="co-chat-panel-header-text">
+                WHISPER STREAM
+            </p>
         </div>
-        <div class="panel-body tipping-chat-panel-body">
+        <div class="panel-body co-chat-body">
             <div class="list-group">
-                <a class="list-group-item tipping-chat-li" ng-repeat="message in messages">
-                    <b>
-                        <span am-time-ago="message.time" class="pull-right"></span>
-                    </b> 
-                    <h4 class="list-group-item-heading tipping-chat-li-heading">
-                        <b>
-                            Autor
-                        </b>
-                    </h4>
-                    <p class="list-group-item-text tipping-chat-li-message">
+                <a class="list-group-item co-chat-item" ng-repeat="message in messages">
+                    <span class="co-chat-item-avatar-circle">
+                        <i class="fa fa-user co-chat-item-avatar-fa">
+                        </i>
+                    </span>
+                    <span am-time-ago="message.time" class="pull-right co-chat-item-time"></span>
+                    <p class="co-chat-item-title">
+                        Author
+                    </p>
+                    <p class="co-chat-item-text">
                         {{message.text}}
                     </p>
                 </a> 
             </div>
         </div>
-        <div class="panel-footer tipping-chat-panel-footer">
+        <div class="panel-footer co-chat-footer">
             <form class="input-group" ng-submit="sendMessage()">
                 <input class="form-control tipping-chat-input" type="text" placeholder="enter message here..." ng-model="inputMessage">
                 </input>
