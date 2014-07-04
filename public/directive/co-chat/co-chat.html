@@ -9,8 +9,7 @@
             <div class="list-group">
                 <a class="list-group-item co-chat-item" ng-repeat="message in messages">
                     <span class="co-chat-item-avatar-circle">
-                        <i class="fa fa-user co-chat-item-avatar-fa">
-                        </i>
+                        <i class="fa fa-user co-chat-item-avatar-fa"></i>
                     </span>
                     <span am-time-ago="message.time" class="pull-right co-chat-item-time"></span>
                     <p class="co-chat-item-title">
@@ -23,12 +22,15 @@
             </div>
         </div>
         <div class="panel-footer co-chat-footer">
+            <span class="co-chat-item-avatar-circle co-chat-footer-circle">
+                <i class="fa fa-user co-chat-item-avatar-fa"></i>
+            </span>
             <form class="input-group" ng-submit="sendMessage()">
-                <input class="form-control tipping-chat-input" type="text" placeholder="enter message here..." ng-model="inputMessage">
+                <input class="form-control co-chat-input" type="text" placeholder="Send a message..." ng-model="inputMessage">
                 </input>
                 <span class="input-group-btn">
-                    <button class="btn btn-default tipping-chat-input-button" type="button">
-                        <i class="fa fa-send-o fa-lg tipping-chat-input-icon"></i> 
+                    <button class="btn btn-default co-chat-input-button" type="button">
+                        <i class="fa fa-send-o"></i> 
                     </button>
                 </span>
             </form>
