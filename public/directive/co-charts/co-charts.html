@@ -1,5 +1,14 @@
-<div>
-    <div data-ac-chart="'pie'" data-ac-data="data" data-ac-config="config" class="co-chart">
-    </div>
-
+<div class="list-group co-charts">
+    <a class="list-group-item" ng-repeat="chart in charts">
+        <div>
+            <p class="co-chart-title">
+                {{chart.title}}
+            </p>
+            <p class="co-chart-percentage">
+                {{chart.value}}%
+            </p>
+        </div>
+        <div data-ac-chart="'pie'" data-ac-data="chart.data" data-ac-config="config" class="co-chart">
+        </div>
+    </a>
 </div>
