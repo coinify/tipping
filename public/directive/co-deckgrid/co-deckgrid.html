@@ -1,11 +1,11 @@
-<div>
-    <co-deckgrid-element class="col-md-7 co-deckgrid-element-main" co-data="mainItem">
+<div class="co-deckgrid">
+    <co-deckgrid-element class="col-md-7" co-data="mainItem">
     </co-deckgrid-element>
-    <div class="col-md-5 co-deckgrid-container">
+    <div class="col-md-5 co-deckgrid-group">
         <co-deckgrid-element class="col-md-12" ng-repeat="item in secondItems" co-data="item">
         </co-deckgrid-element>
     </div>
-    <div class="col-md-12 co-deckgrid-container">
+    <div class="col-md-12 co-deckgrid-group">
         <co-deckgrid-element class="col-md-3" ng-repeat="item in restItems" co-data="item">
         </co-deckgrid-element>
     </div>

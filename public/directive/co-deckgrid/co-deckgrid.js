@@ -1,7 +1,7 @@
 angular.module('tipping').directive('coDeckgrid', function() {
 	return {
 		restrict: 'E',
-		replace: true,
+                replace: true,
 		scope: {
 
 		},

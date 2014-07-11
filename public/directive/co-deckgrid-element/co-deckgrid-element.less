@@ -1,13 +1,52 @@
-.co-deckgrid-element-title {
-    color: white;
-    position: absolute;
-    left: 20px;
-    bottom: 10px;
-}
+.co-deckgrid-content {
+    height: 100%;
+    width: 100%;
+    background: url(http://lorempixel.com/300/400/nightlife) no-repeat;
+    background-color: #444;
+    background-size: 100%;
 
-.co-deckgrid-element-icon {
-    color: white;
-    position: absolute;
-    right: 30px;
-    bottom: 20px;
+    > div {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        > div {
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            bottom: 0px;
+            transition: all 1.0s ease;
+            -webkit-transition: all 1.0s ease;
+
+            > h4 {
+                color: white;
+                position: absolute;
+                left: 20px;
+                top: 10px;
+                transition: all 1.0s ease;
+                -webkit-transition: all 1.0s ease;
+            }
+
+            > i {
+                color: white;
+                position: absolute;
+                right: 30px;
+                top: 20px;
+                transition: all 1.0s ease;
+                -webkit-transition: all 1.0s ease;
+            }
+        }
+        > div:hover {
+            height: 100%;
+            background-color: rgba(255,255,255,0.8);
+
+            > h4 {
+                color: black;    
+            }
+
+            > i {
+                color: black;    
+                -webkit-transform: rotate(180deg);
+            }
+        }
+    }
 }
