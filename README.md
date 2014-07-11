@@ -33,6 +33,7 @@ git clone https://github.com/coinify/tipping.git
 - 4. Install project dependencies
 
 ```
+cd tipping
 npm install && bower install
 ```
 
