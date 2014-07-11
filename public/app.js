@@ -1,4 +1,11 @@
-angular.module('tipping', ['ui.bootstrap','ui.utils','ui.router','ngAnimate', 'btford.socket-io', 'angularMoment']);
+angular.module('tipping', [
+        'ui.bootstrap',
+        'ui.utils',
+        'ui.router',
+        'ngAnimate', 
+        'btford.socket-io', 
+        'angularMoment',
+        'angularCharts']);
 
 angular.module('tipping').config(function($stateProvider, $urlRouterProvider) {
 
