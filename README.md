@@ -4,11 +4,11 @@ tipping
 Project generated with cg-angular.
 
 How to install?
-1. Get homebrew
-2. Install npm
-3. Clone project
-4. Install project dependencies
-5. Run!
+- 1. Get homebrew
+- 2. Install npm
+- 3. Clone project
+- 4. Install project dependencies
+- 5. Run!
 
 
 ======
