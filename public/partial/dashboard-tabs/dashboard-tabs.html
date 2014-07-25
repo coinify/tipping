@@ -3,9 +3,12 @@
         <div class="navbar-collapse collapse tipping-navbar-tabs-collapse">
             <ul class="nav navbar-nav">
                 <li ng-repeat="link in links" ui-sref-active="tipping-navbar-tab-selected" class="tipping-navbar-tab">
-                    <a ui-sref="leftbar.dashboard.tabs.channel({channel:link})">
+                    <a ui-sref="leftbar.dashboard.tabs.channel({channel:link.title})">
                         <i class="fa fa-globe fa-lg"></i>
-                        &nbsp;#{{link}}
+                        <span class="co-tab-bold">
+                            &nbsp;#{{link.title}}
+                        </span>
+                        <span class="co-tab-small">{{link.subtitle}}</span>
                     </a>
                 </li>
             </ul>

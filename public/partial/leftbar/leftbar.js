@@ -3,7 +3,7 @@ angular.module('tipping').controller('LeftbarCtrl',function($scope, $location){
     $scope.sections = [{
         title: 'Dashboard',
         image: '/res/navi_dashboard.png',
-        link: 'leftbar.dashboard.tabs.channel({channel:"global"})',
+        link: 'leftbar.dashboard.tabs.channel({channel:"general"})',
         key: 'dashboard'
     },{
         title: 'Wallet',
