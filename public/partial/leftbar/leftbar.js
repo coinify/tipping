@@ -2,22 +2,22 @@ angular.module('tipping').controller('LeftbarCtrl',function($scope, $location){
 
     $scope.sections = [{
         title: 'Dashboard',
-        image: '',
+        image: '/res/navi_dashboard.png',
         link: 'leftbar.dashboard.tabs.channel({channel:"global"})',
         key: 'dashboard'
     },{
         title: 'Wallet',
-        image: '',
+        image: '/res/navi_wallet.png',
         link: 'leftbar.wallet',
         key: 'wallet'
     },{
         title: 'Reputation',
-        image: '',
+        image: '/res/navi_reputation.png',
         link: 'leftbar.reputation',
         key: 'reputation'
     },{
         title: 'Settings',
-        image: '',
+        image: '/res/navi_settings.png',
         link: 'leftbar.settings',
         key: 'settings'
     }];
