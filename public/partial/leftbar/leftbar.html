@@ -1,13 +1,29 @@
 <div class="col-md-12 tipping-fill" ng-controller="LeftbarCtrl">
 
-    <div class="col-lg-1 col-md-1 col-xs-1 col-sm-1 list-group tipping-leftbar">
-        <div class="list-group-item" ng-repeat="section in sections" ui-sref-active="co-leftbar-selected" ui-sref="{{section.link}}">
-            <p><img src="/res/navi_dots.png"></img></p>
-            <p><img class="co-leftbar-logo" ng-src="{{section.image}}"></img></p>
-            <p>{{section.title}}</p>
-        </div> 
+    <div class="col-lg-1 col-md-1 col-xs-12 col-sm-12 co-leftbar">
+        <div class="co-leftbar-content">
+            <div class="panel">
+                <div class="panel-heading">
+                </div>
+                <div class="panel-body">
+                    <div class="list-group-item" ng-repeat="section in sections" ui-sref-active="co-leftbar-selected" ui-sref="{{section.link}}">
+                        <p><img class="co-leftbar-dots" src="/res/navi_dots.png"></img></p>
+                        <p><img class="co-leftbar-logo" ng-src="{{section.image}}"></img></p>
+                        <p>{{section.title}}</p>
+                    </div> 
+                </div>
+            </div>
+            <div class="co-leftbar-bottombar">
+
+                <p><img class="co-leftbar-logo" src="/res/navi_network.png"></img></p>
+                <p>Network</p>
+                <p><img class="co-leftbar-dots" src="/res/navi_dots.png"></img></p>
+                <a target="_blank" href="http://www.ethereum.org/"><img class="co-leftbar-logo" src="/res/navi_ethereum.png"></img></a>
+
+            </div>
+        </div>
     </div>
-    <div class="col-lg-11 col-md-11 col-xs-11 col-sm-11 tipping-fill tipping-background">
+    <div class="col-lg-11 col-md-11 col-xs-12 col-sm-12 tipping-fill tipping-background">
         <div ui-view="main"></div>
     </div>
 </div>

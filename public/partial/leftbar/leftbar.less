@@ -8,37 +8,69 @@ html, body {
     padding-right: 0px;
 }
 
-.tipping-leftbar {
-    height: 100%;
+.co-leftbar {
     background-color: #151515;
-    padding-top: 134px;
-    padding-left: 0px;
-    padding-right: 0px;
+    height: 100%;
+    padding: 0px;
+    
+    .co-leftbar-content {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
 
-    > .list-group-item {
-        text-align: center;
-        padding: 0px;
-        cursor: pointer;
-        color: rgba(124,124,124,1);
+    .co-leftbar-bottombar {
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+        color: rgb(124,124,124);
+    }
+
+    .co-leftbar-bottombar:hover {
+        color: white; 
+    }
+
+    div {
+        border: 0px;    
+        border-radius: 0px;
         background-color: transparent;
-        height: 110px;
-        border-width: 0px;
+        padding: 0px; 
+        text-align: center;
+    }
+    
+    p {
+        
         font-size: 12px;
         font-family: 'Myriad Pro Semibold';
     }
+    
+    .co-leftbar-dots {
+        width: 20px;    
+    }
 
-    > .list-group-item:hover {
-        color: white;
-    }
-    
-    > .co-leftbar-selected {
-        color: white;    
-    }
-    
     .co-leftbar-logo {
-        width: 30px;
-    }    
+        width: 30px;    
+    }
+
+    .panel {
+        .panel-heading {
+            height: 134px;
+        }
+        .panel-body {
+            .list-group-item {
+                color: rgb(124,124,124);
+                cursor: pointer;
+            }
+            .list-group-item:hover {
+                color: white;
+            }
+            .co-leftbar-selected {
+                color: white;
+            }
+        }
+    }  
 }
+
 
 .tipping-background {
     background-color: #212121;
