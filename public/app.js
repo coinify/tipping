@@ -40,10 +40,15 @@ angular.module('tipping').config(function($stateProvider, $urlRouterProvider) {
         view: 'main',
         templateUrl: 'partial/reputation/reputation.html'
     },{
-        url:'/settings',
+        url: '/settings',
         state: 'settings',
         view: 'main',
         templateUrl: 'partial/settings/settings.html'
+    },{
+        url: '/network',
+        state: 'network',
+        view: 'main',
+        templateUrl: 'partial/network/network.html'
     }]);
 
     registerSubstateInView('leftbar.dashboard', [{
@@ -60,7 +65,6 @@ angular.module('tipping').config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'partial/tab/tab.html'
     }]);
 
-    
     /* Add New States Above */
     $urlRouterProvider.otherwise('/dashboard/global');
 
